@@ -16,6 +16,7 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.2",
+        "laravelcollective/html": "^6.0",
         "overtrue/laravel-favorite": "^5.1",
         "payjp/payjp-php": "^1.3"
     },

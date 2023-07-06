@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light shadow-sm samuraimart-header-container">
     <div class="container">
       <a class="navbar-brand" href="{{ url('/') }}">
-        <img src="{{asset('img/logo.jpg')}}">
+        <img src="{{asset('img/johncafe.png')}}" width="100px">
       </a>
       <form class="row g-1">
         <div class="col-auto">
@@ -34,6 +34,11 @@
             <a class="nav-link" href="{{ route('login') }}"><i class="fas fa-shopping-cart"></i></a>
           </li>
           @else<!--ログインしている-->
+          <li class="nav-item mr-5">
+            <a class="nav-link" href="{{ route('posts.index') }}">
+              <i class="fas fa-user mr-1"></i><label>ボードゲーム投稿</label>
+            </a>
+          </li>
           <li class="nav-item mr-5">
             <a class="nav-link" href="{{ route('mypage') }}">
               <i class="fas fa-user mr-1"></i><label>マイページ</label>

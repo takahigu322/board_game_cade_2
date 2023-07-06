@@ -6,6 +6,8 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\WebController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BoardGameCafeController;
+use App\Http\Controllers\PostController;
 
 
 
@@ -49,3 +51,18 @@ Route::resource('products', ProductController::class)->middleware(['auth', 'veri
 Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route::get('/', [BoardGameCafeController::class, 'index']);
+Route::get('/map', [BoardGameCafeController::class, 'index']);
+
+// Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+// Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+// Route::post('/store', [PostController::class, 'store'])->name('posts.store');
+
+// Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+// Route::get('/posts/{post}/edit',[PostController::class, 'edit'])->name('posts.edit');
+// Route::patch('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
+
+// Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+
+Route::resource('posts', PostController::class);

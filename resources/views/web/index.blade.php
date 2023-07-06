@@ -6,6 +6,7 @@
         @component('components.sidebar', ['categories' => $categories, 'major_categories' => $major_categories])
         @endcomponent
     </div>
+    
     <div class="col-9">
         <h1>おすすめ商品</h1>
         <div class="row">
@@ -50,7 +51,31 @@
                     </div>
                 </div>
             </div>
-        @endforeach
+            @endforeach
+        </div>
+
+        <h1>投稿商品</h1>
+        <div class="row">
+            @foreach ($posts as $post)
+            <div class="col-3">
+                <div>
+                    <h2>{{ $post->title }}</h2>
+                    <p><img src="{{ asset('/storage/'.$post->image)}}" width="200" height="auto" class="img-thumbnail"></p>
+                    <p>{{ $post->content }}</p>
+
+                    {{-- @props([
+                        'images' => []
+                    ])
+                    @if(count($images) > 0 )
+                        <div>   
+                            @foreach($images as $image)
+                                <p><img alt="{{$image->name }}"  src="{{asset('storage/images' . $image->name)}}" . width="25%"></p>
+                            @endforeach
+                        </div>
+                    @endif --}}
+                </div>
+            </div>
+            @endforeach
         </div>
     </div>
 </div>
